@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web_Genshin", "Web_Genshin\Web_Genshin.csproj", "{00E624D6-EA45-41B2-AE34-41BF621E9A33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00E624D6-EA45-41B2-AE34-41BF621E9A33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00E624D6-EA45-41B2-AE34-41BF621E9A33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00E624D6-EA45-41B2-AE34-41BF621E9A33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00E624D6-EA45-41B2-AE34-41BF621E9A33}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CBE08CF4-9720-49D1-9097-EA26604C948A}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,157 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Учитывает отступы и рамки в общей ширине/высоте */
+}
+
+/* Устанавливаем фон для всей страницы */
+body {
+    background-color: #f0f0f0; /* Можно заменить на нужный цвет фона */
+}
+
+/* Убираем белую полоску под синим (например, у body или header) */
+body, html {
+    height: 100%; /* Убедитесь, что высота страницы растягивается на весь экран */
+}
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    background-color: #f3a7a7e8;
+   
+}
+
+    .sidebar a {
+        
+        text-decoration: none;
+        display: block;
+    }
+
+        .sidebar a:hover {
+            background-color: #e7a3a3e8;
+        }
+
+.content {
+    margin-left: 250px; /* Отступ для контента, чтобы не перекрывать боковую панель */
+    padding: 20px;
+    background-color: #1e3a8a; /* Синий фон для всего контента */
+    color: white; /* Белый цвет текста на синем фоне */
+    min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+}
+
+.nav-tittle {
+    padding: 10px 15px;
+    color: #211497e8;
+    font-size: 30px;
+    font-family: "Scada", serif;
+    font-weight: 700;
+}
+
+.nav-main-tittle {
+    color: #211497e8;
+    font-size: 20px;
+    font-family: "Scada", serif;
+    font-weight: 700;
+    padding: 40px 15px;
+}
+
+.main-tittle {
+    text-align: left;
+    color: white;
+    font-family: "Scada", serif;
+    font-weight: 700;
+    font-size: xxx-large;
+}
+
+.name-tittle {
+    color: #f3a7a7e8;
+    font-family: "Scada", serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.just-text {
+    text-align: left;
+    color: white;
+    font-family: "Scada", serif;
+    font-weight: 700;
+}
+.content-wrapper {
+    margin-top:60px;
+    display: flex;
+    justify-content: space-between; /* Распределение элементов по краям контейнера */
+    align-items: center; /* Центрирование элементов по вертикали */
+    gap: 20px; /* Расстояние между текстом и изображением */
+}
+
+.text-content {
+    flex: 1; /* Текст будет занимать всё доступное пространство слева */
+    max-width: 60%; /* Максимальная ширина текста */
+}
+
+.image-content {
+    display: flex;
+    justify-content: center; /* Центрирование изображения по горизонтали */
+    align-items: center; /* Центрирование изображения по вертикали */
+}
+
+.image-frame {
+    border: 10px solid pink; /* Розовая рамка вокруг изображения */
+    padding: 20px; /* Отступ между картинкой и рамкой */
+    display: inline-block; /* Рамка будет растягиваться по размерам изображения */
+}
+
+    .image-frame img {
+        display: block; /* Убирает лишнее пространство под изображением */
+        width: 100%; /* Ширина изображения будет адаптироваться к доступному пространству */
+        max-width: 500px; /* Максимальная ширина картинки */
+        height: auto; /* Сохраняет пропорции изображения */
+    }
+
+.end-text {
+    margin-top:40px;
+    text-align: left;
+    color: white;
+    font-family: "Scada", serif;
+    font-weight: 700;
+}
+
