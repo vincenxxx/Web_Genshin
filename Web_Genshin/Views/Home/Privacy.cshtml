@@ -1,6 +1,115 @@
 ﻿@{
     ViewData["Title"] = "Privacy Policy";
 }
-<h1>@ViewData["Title"]</h1>
+<div class="_container _container--indent l_k">
+    <div class="paper catalog-body">
+        <div class="le_f1">
+            <div class="le_b2">Каталог</div>
+            <div class="form-input le_b3">
+                <input class="form-input__field" type="text" placeholder="Поиск по названию" wfd-id="id0"><!----><!---->
+            </div>
+        </div>
+        <div id="cards-container" class="cards-container">
+            <!-- Карточки будут добавляться сюда -->
+        </div>
+    </div>
 
-<p>Use this page to detail your site's privacy policy.</p>
+    <div id="character-modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="modal-title" class="modal-title"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="modal-body" class="modal-body">
+                    <!-- Информация о персонаже будет отображаться здесь -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="catalog-filter paper">
+        <div class="filter-category">
+            <div class="filter-category-title">Оружие:</div>
+            <div class="filter-options">
+                <div class="filter-column">
+                    <label>
+                        <input type="checkbox" name="weapon" value="bow"> Лук
+                    </label>
+                    <label>
+                        <input type="checkbox" name="weapon" value="sword"> Одноручный меч
+                    </label>
+                    <label>
+                        <input type="checkbox" name="weapon" value="catalyz"> Катализатор
+                    </label>
+                </div>
+                <div class="filter-column">
+                    <label>
+                        <input type="checkbox" name="weapon" value="polearm"> Копье
+                    </label>
+                    <label>
+                        <input type="checkbox" name="weapon" value="claymore"> Двуручный меч
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="filter-category">
+            <div class="filter-category-title">Редкость:</div>
+            <div class="filter-options">
+                <div class="filter-column">
+                    <label>
+                        <input type="checkbox" name="weapon" value="4st"> Легендарный
+                    </label>
+                    <label>
+                        <input type="checkbox" name="weapon" value="5st"> Эпический
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="filter-category">
+            <div class="filter-category-title">Элемент:</div>
+            <div class="filter-options">
+                <div class="filter-column">
+                    <label>
+                        <input type="checkbox" name="weapon" value="cryo"> Крио
+                    </label>
+                    <label>
+                        <input type="checkbox" name="weapon" value="pyro"> Пиро
+                    </label>
+                    <label>
+                        <input type="checkbox" name="weapon" value="electro"> Электро
+                    </label>
+                    <label>
+                        <input type="checkbox" name="weapon" value="hydro"> Гидро
+                    </label>
+
+                </div>
+                <div class="filter-column">
+                    <label>
+                        <input type="checkbox" name="weapon" value="dendro"> Дендро
+                    </label>
+                    <label>
+                        <input type="checkbox" name="weapon" value="geo"> Гео
+                    </label>
+                    <label>
+                        <input type="checkbox" name="weapon" value="anemo"> Анемо
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="filter-actions">
+            <button class="btn btn-primary" id="apply-filter">Применить</button>
+            <button class="btn btn-secondary" id="reset-filter">Сбросить</button>
+        </div>
+    </div>
+
+
+</div>
+

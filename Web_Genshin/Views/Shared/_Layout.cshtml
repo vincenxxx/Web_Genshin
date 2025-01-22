@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Web_Genshin</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Web_Genshin.styles.css" asp-append-version="true" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +15,7 @@
 </head>
 <body>
     <div class="sidebar">
-        <a class="nav-main-tittle" asp-area="">CharacterGenshinBoost</a>
+        <a class="nav-main-tittle" asp-area="" asp-controller="Home" asp-action="Index">CharacterGenshinBoost</a>
         <a class="nav-tittle" asp-area="" asp-controller="Home" asp-action="Index">Главная</a>
         <a class="nav-tittle" asp-area="" asp-controller="Home" asp-action="Privacy">Каталог</a>
     </div>
@@ -26,10 +27,11 @@
             </main>
         </div>
     </div>
-
+    <script src="~/js/site.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

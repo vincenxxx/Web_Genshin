@@ -155,3 +155,298 @@ body {
     font-weight: 700;
 }
 
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #f3a7a7e8; /* Розовая граница */
+    border-radius: 5px;
+    background-color: #fff0f6; /* Светлый розовый фон */
+    color: white; /* Розовый цвет текста */
+    outline: none; /* Убираем обводку при фокусе */
+}
+
+    .search-input:focus {
+        border-color: #f3a7a7e8; /* Темно-розовый цвет границы при фокусе */
+        background-color: #ffe6f2; /* Легкий розовый цвет фона при фокусе */
+    }
+
+.search-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #f3a7a7e8; /* Розовый цвет кнопки */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+    .search-button:hover {
+        background-color: #ffe6f2; /* Темно-розовый цвет кнопки при наведении */
+    }
+
+
+
+.catalog-body {
+    flex-grow: 1;
+    min-width: 0;
+    margin-right: 20px;
+}
+
+@media screen and (min-width: 992px) {
+    .paper {
+        border-radius: 8px;
+        background: #f3a7a7e8;
+    }
+}
+
+.le_f1 {
+    padding: 12px 16px 8px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 12px;
+}
+.le_b2 {
+    color: #1e3a8a;
+    font-size: 30px;
+    font-family: "Scada", serif;
+    font-weight: 700;
+}
+.form-input {
+    position: relative;
+    flex-grow: 1;
+    margin-bottom: 50px;
+}
+.le_b3 {
+    grid-column: 1 / -1;
+}
+
+.form-input__icon {
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    color: #8a8a8e;
+    color: var(--text-secondary);
+}
+.form-input__icon_left + .form-input__field {
+    padding-left: 32px;
+}
+
+input.form-input__field, select.form-input__field, .form-input__placeholder {
+    padding: 5px 12px;
+}
+.form-input__field {
+    display: block;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 5px;
+    color: #212529;
+    color: var(--text-primary);
+    border: solid 1px #dcdee2;
+    border: solid 1px var(--input-border);
+    transition: border .2s ease-in-out, background .2s ease-in-out, box-shadow .2s ease-in-out;
+}
+.form-input__field {
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    color: #1e3a8a;
+    font-family: "Scada", serif;
+    font-weight: 700;
+}
+
+@media screen and (min-width: 992px) {
+    .l_k {
+        display: grid;
+        grid-template-columns: 1fr 330px;
+        gap: var(--gap);
+        padding-top: var(--container-spacing);
+        padding-bottom: var(--container-spacing);
+    }
+}
+@media screen and (min-width: 992px) {
+    ._container--indent {
+        padding-left: var(--container-px);
+        padding-right: var(--container-px);
+    }
+}
+._container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+.catalog-filter {
+    position: sticky;
+    top: 72px;
+    z-index: 200;
+    width: 330px;
+    max-height: calc(100vh - 88px);
+    overflow: hidden;
+}
+
+.filter-category-title {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top:10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    text-align: left;
+    color: #1e3a8a;
+    font-family: "Scada", serif;
+    font-weight: 700;
+}
+
+/* Контейнер для чекбоксов, два столбца */
+.filter-options {
+    display: flex;
+    gap: 16px;
+    margin: 10px; /* Расстояние между двумя столбцами */
+}
+
+/* Контейнер для каждого столбца с чекбоксами */
+.filter-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Отступ между чекбоксами в одном столбце */
+}
+
+/* Стили для чекбоксов */
+.filter-options label {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    color: #1e3a8a;
+    font-family: "Scada", serif;
+    font-weight: 700;
+}
+
+.filter-options input {
+    margin-right: 8px;
+}
+
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Отступы между карточками */
+    justify-content: center;
+    padding: 0 16px; /* Отступы по бокам контейнера */
+}
+
+/* Каждая карточка */
+.card {
+    width: calc(33.33% - 16px); /* Ширина карточки с учетом отступа */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background: #1e3a8a;
+    border-color: #1e3a8a;
+    margin-bottom: 10px;
+
+}
+
+    /* Стили для изображения в карточке */
+    .card img {
+        width: 100%; /* Задаем ширину изображения на 100% от родительского контейнера */
+        height: 300px;
+        border-radius: 5px;
+    }
+
+    /* Стили для названия в карточке */
+    .card h3 {
+        font-size: 22px;
+        margin-top: 10px;
+        color: white;
+        font-family: "Scada", serif;
+        font-weight: 700;
+    }
+
+.filter-actions {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    gap: 10px;
+    margin-bottom:20px;
+}
+
+/* Стиль для кнопок */
+.btn {
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #1e3a8a;
+    color: #fff;
+    border: none;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+}
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+
+
+.modal-content {
+    background-color: #f5a7a7; /* Ваш желаемый цвет фона */
+}
+
+/* Изменяем цвет заголовка модального окна */
+.modal-header {
+    background-color: #f78fb3; /* Ваш желаемый цвет фона для заголовка */
+}
+
+/* Изменяем цвет текста в модальном окне */
+.modal-body {
+    color: #333333; /* Ваш желаемый цвет текста */
+}
+
+.modal-header .close {
+    color: #d9534f; /* Красный цвет */
+    font-size: 1.5rem;
+}
+
+/* Изменяем цвет кнопок действия (например, Сохранить или Отменить) */
+.modal-footer .btn {
+    background-color: #5bc0de; /* Ваш желаемый цвет фона */
+    color: white;
+}
+
+.modal-footer .btn-primary {
+    background-color: #28a745; /* Зеленый для кнопки "Сохранить" */
+}
+
+.modal-footer .btn-secondary {
+    background-color: #6c757d; /* Серый для кнопки "Отменить" */
+}
