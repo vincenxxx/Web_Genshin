@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Auth";
+}
+<div class="auth-container">
+    <h1 class="main-tittle">Добро пожаловать в <span class="name-tittle">CharacterGenshinBoost</span>!</h1>
+    <h2 class="just-text">Авторизуйтесь, чтобы получить доступ ко всем возможностям.</h2>
+
+    <form class="auth-form">
+        <!-- Поле для имени пользователя -->
+        <label for="username" class="auth-form-label just-text">Имя пользователя</label>
+        <input type="text" id="username" name="username" class="auth-form-input" placeholder="Введите ваше имя пользователя" required />
+
+        <!-- Поле для пароля -->
+        <label for="password" class="auth-form-label just-text">Пароль</label>
+        <input type="password" id="password" name="password" class="auth-form-input" placeholder="Введите ваш пароль" required />
+
+        <!-- Кнопка авторизации -->
+        <button type="submit" class="auth-button">Войти</button>
+
+        <!-- Ссылка на регистрацию -->
+        <p class="just-text">
+            Нет аккаунта? <a href="#" class="name-tittle">Зарегистрируйтесь</a>!
+        </p>
+    </form>
+</div>
+

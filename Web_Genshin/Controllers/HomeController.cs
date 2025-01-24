@@ -22,6 +22,10 @@ namespace Web_Genshin.Controllers
         {
             return View();
         }
+        public IActionResult Auth()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

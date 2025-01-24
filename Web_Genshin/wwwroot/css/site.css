@@ -1,18 +1,18 @@
-
+п»ї
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Учитывает отступы и рамки в общей ширине/высоте */
+    box-sizing: border-box; /* РЈС‡РёС‚С‹РІР°РµС‚ РѕС‚СЃС‚СѓРїС‹ Рё СЂР°РјРєРё РІ РѕР±С‰РµР№ С€РёСЂРёРЅРµ/РІС‹СЃРѕС‚Рµ */
 }
 
-/* Устанавливаем фон для всей страницы */
+/* РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј С„РѕРЅ РґР»СЏ РІСЃРµР№ СЃС‚СЂР°РЅРёС†С‹ */
 body {
-    background-color: #f0f0f0; /* Можно заменить на нужный цвет фона */
+    background-color: #f0f0f0; /* РњРѕР¶РЅРѕ Р·Р°РјРµРЅРёС‚СЊ РЅР° РЅСѓР¶РЅС‹Р№ С†РІРµС‚ С„РѕРЅР° */
 }
 
-/* Убираем белую полоску под синим (например, у body или header) */
+/* РЈР±РёСЂР°РµРј Р±РµР»СѓСЋ РїРѕР»РѕСЃРєСѓ РїРѕРґ СЃРёРЅРёРј (РЅР°РїСЂРёРјРµСЂ, Сѓ body РёР»Рё header) */
 body, html {
-    height: 100%; /* Убедитесь, что высота страницы растягивается на весь экран */
+    height: 100%; /* РЈР±РµРґРёС‚РµСЃСЊ, С‡С‚Рѕ РІС‹СЃРѕС‚Р° СЃС‚СЂР°РЅРёС†С‹ СЂР°СЃС‚СЏРіРёРІР°РµС‚СЃСЏ РЅР° РІРµСЃСЊ СЌРєСЂР°РЅ */
 }
 
 html {
@@ -59,10 +59,10 @@ body {
         }
 
 .content {
-    margin-left: 250px; /* Отступ для контента, чтобы не перекрывать боковую панель */
+    margin-left: 250px; /* РћС‚СЃС‚СѓРї РґР»СЏ РєРѕРЅС‚РµРЅС‚Р°, С‡С‚РѕР±С‹ РЅРµ РїРµСЂРµРєСЂС‹РІР°С‚СЊ Р±РѕРєРѕРІСѓСЋ РїР°РЅРµР»СЊ */
     padding: 20px;
-    background-color: #1e3a8a; /* Синий фон для всего контента */
-    color: white; /* Белый цвет текста на синем фоне */
+    background-color: #1e3a8a; /* РЎРёРЅРёР№ С„РѕРЅ РґР»СЏ РІСЃРµРіРѕ РєРѕРЅС‚РµРЅС‚Р° */
+    color: white; /* Р‘РµР»С‹Р№ С†РІРµС‚ С‚РµРєСЃС‚Р° РЅР° СЃРёРЅРµРј С„РѕРЅРµ */
     min-height: 100vh;
 }
 
@@ -118,33 +118,33 @@ body {
 .content-wrapper {
     margin-top:60px;
     display: flex;
-    justify-content: space-between; /* Распределение элементов по краям контейнера */
-    align-items: center; /* Центрирование элементов по вертикали */
-    gap: 20px; /* Расстояние между текстом и изображением */
+    justify-content: space-between; /* Р Р°СЃРїСЂРµРґРµР»РµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РїРѕ РєСЂР°СЏРј РєРѕРЅС‚РµР№РЅРµСЂР° */
+    align-items: center; /* Р¦РµРЅС‚СЂРёСЂРѕРІР°РЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РїРѕ РІРµСЂС‚РёРєР°Р»Рё */
+    gap: 20px; /* Р Р°СЃСЃС‚РѕСЏРЅРёРµ РјРµР¶РґСѓ С‚РµРєСЃС‚РѕРј Рё РёР·РѕР±СЂР°Р¶РµРЅРёРµРј */
 }
 
 .text-content {
-    flex: 1; /* Текст будет занимать всё доступное пространство слева */
-    max-width: 60%; /* Максимальная ширина текста */
+    flex: 1; /* РўРµРєСЃС‚ Р±СѓРґРµС‚ Р·Р°РЅРёРјР°С‚СЊ РІСЃС‘ РґРѕСЃС‚СѓРїРЅРѕРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ СЃР»РµРІР° */
+    max-width: 60%; /* РњР°РєСЃРёРјР°Р»СЊРЅР°СЏ С€РёСЂРёРЅР° С‚РµРєСЃС‚Р° */
 }
 
 .image-content {
     display: flex;
-    justify-content: center; /* Центрирование изображения по горизонтали */
-    align-items: center; /* Центрирование изображения по вертикали */
+    justify-content: center; /* Р¦РµРЅС‚СЂРёСЂРѕРІР°РЅРёРµ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РїРѕ РіРѕСЂРёР·РѕРЅС‚Р°Р»Рё */
+    align-items: center; /* Р¦РµРЅС‚СЂРёСЂРѕРІР°РЅРёРµ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РїРѕ РІРµСЂС‚РёРєР°Р»Рё */
 }
 
 .image-frame {
-    border: 10px solid pink; /* Розовая рамка вокруг изображения */
-    padding: 20px; /* Отступ между картинкой и рамкой */
-    display: inline-block; /* Рамка будет растягиваться по размерам изображения */
+    border: 10px solid pink; /* Р РѕР·РѕРІР°СЏ СЂР°РјРєР° РІРѕРєСЂСѓРі РёР·РѕР±СЂР°Р¶РµРЅРёСЏ */
+    padding: 20px; /* РћС‚СЃС‚СѓРї РјРµР¶РґСѓ РєР°СЂС‚РёРЅРєРѕР№ Рё СЂР°РјРєРѕР№ */
+    display: inline-block; /* Р Р°РјРєР° Р±СѓРґРµС‚ СЂР°СЃС‚СЏРіРёРІР°С‚СЊСЃСЏ РїРѕ СЂР°Р·РјРµСЂР°Рј РёР·РѕР±СЂР°Р¶РµРЅРёСЏ */
 }
 
     .image-frame img {
-        display: block; /* Убирает лишнее пространство под изображением */
-        width: 100%; /* Ширина изображения будет адаптироваться к доступному пространству */
-        max-width: 500px; /* Максимальная ширина картинки */
-        height: auto; /* Сохраняет пропорции изображения */
+        display: block; /* РЈР±РёСЂР°РµС‚ Р»РёС€РЅРµРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РїРѕРґ РёР·РѕР±СЂР°Р¶РµРЅРёРµРј */
+        width: 100%; /* РЁРёСЂРёРЅР° РёР·РѕР±СЂР°Р¶РµРЅРёСЏ Р±СѓРґРµС‚ Р°РґР°РїС‚РёСЂРѕРІР°С‚СЊСЃСЏ Рє РґРѕСЃС‚СѓРїРЅРѕРјСѓ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІСѓ */
+        max-width: 500px; /* РњР°РєСЃРёРјР°Р»СЊРЅР°СЏ С€РёСЂРёРЅР° РєР°СЂС‚РёРЅРєРё */
+        height: auto; /* РЎРѕС…СЂР°РЅСЏРµС‚ РїСЂРѕРїРѕСЂС†РёРё РёР·РѕР±СЂР°Р¶РµРЅРёСЏ */
     }
 
 .end-text {
@@ -165,22 +165,22 @@ body {
     width: 300px;
     padding: 10px;
     font-size: 16px;
-    border: 2px solid #f3a7a7e8; /* Розовая граница */
+    border: 2px solid #f3a7a7e8; /* Р РѕР·РѕРІР°СЏ РіСЂР°РЅРёС†Р° */
     border-radius: 5px;
-    background-color: #fff0f6; /* Светлый розовый фон */
-    color: white; /* Розовый цвет текста */
-    outline: none; /* Убираем обводку при фокусе */
+    background-color: #fff0f6; /* РЎРІРµС‚Р»С‹Р№ СЂРѕР·РѕРІС‹Р№ С„РѕРЅ */
+    color: white; /* Р РѕР·РѕРІС‹Р№ С†РІРµС‚ С‚РµРєСЃС‚Р° */
+    outline: none; /* РЈР±РёСЂР°РµРј РѕР±РІРѕРґРєСѓ РїСЂРё С„РѕРєСѓСЃРµ */
 }
 
     .search-input:focus {
-        border-color: #f3a7a7e8; /* Темно-розовый цвет границы при фокусе */
-        background-color: #ffe6f2; /* Легкий розовый цвет фона при фокусе */
+        border-color: #f3a7a7e8; /* РўРµРјРЅРѕ-СЂРѕР·РѕРІС‹Р№ С†РІРµС‚ РіСЂР°РЅРёС†С‹ РїСЂРё С„РѕРєСѓСЃРµ */
+        background-color: #ffe6f2; /* Р›РµРіРєРёР№ СЂРѕР·РѕРІС‹Р№ С†РІРµС‚ С„РѕРЅР° РїСЂРё С„РѕРєСѓСЃРµ */
     }
 
 .search-button {
     padding: 10px 15px;
     font-size: 16px;
-    background-color: #f3a7a7e8; /* Розовый цвет кнопки */
+    background-color: #f3a7a7e8; /* Р РѕР·РѕРІС‹Р№ С†РІРµС‚ РєРЅРѕРїРєРё */
     color: white;
     border: none;
     border-radius: 5px;
@@ -189,7 +189,7 @@ body {
 }
 
     .search-button:hover {
-        background-color: #ffe6f2; /* Темно-розовый цвет кнопки при наведении */
+        background-color: #ffe6f2; /* РўРµРјРЅРѕ-СЂРѕР·РѕРІС‹Р№ С†РІРµС‚ РєРЅРѕРїРєРё РїСЂРё РЅР°РІРµРґРµРЅРёРё */
     }
 
 
@@ -313,21 +313,21 @@ input.form-input__field, select.form-input__field, .form-input__placeholder {
     font-weight: 700;
 }
 
-/* Контейнер для чекбоксов, два столбца */
+/* РљРѕРЅС‚РµР№РЅРµСЂ РґР»СЏ С‡РµРєР±РѕРєСЃРѕРІ, РґРІР° СЃС‚РѕР»Р±С†Р° */
 .filter-options {
     display: flex;
     gap: 16px;
-    margin: 10px; /* Расстояние между двумя столбцами */
+    margin: 10px; /* Р Р°СЃСЃС‚РѕСЏРЅРёРµ РјРµР¶РґСѓ РґРІСѓРјСЏ СЃС‚РѕР»Р±С†Р°РјРё */
 }
 
-/* Контейнер для каждого столбца с чекбоксами */
+/* РљРѕРЅС‚РµР№РЅРµСЂ РґР»СЏ РєР°Р¶РґРѕРіРѕ СЃС‚РѕР»Р±С†Р° СЃ С‡РµРєР±РѕРєСЃР°РјРё */
 .filter-column {
     display: flex;
     flex-direction: column;
-    gap: 8px; /* Отступ между чекбоксами в одном столбце */
+    gap: 8px; /* РћС‚СЃС‚СѓРї РјРµР¶РґСѓ С‡РµРєР±РѕРєСЃР°РјРё РІ РѕРґРЅРѕРј СЃС‚РѕР»Р±С†Рµ */
 }
 
-/* Стили для чекбоксов */
+/* РЎС‚РёР»Рё РґР»СЏ С‡РµРєР±РѕРєСЃРѕРІ */
 .filter-options label {
     font-size: 16px;
     display: flex;
@@ -345,14 +345,14 @@ input.form-input__field, select.form-input__field, .form-input__placeholder {
 .cards-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px; /* Отступы между карточками */
+    gap: 16px; /* РћС‚СЃС‚СѓРїС‹ РјРµР¶РґСѓ РєР°СЂС‚РѕС‡РєР°РјРё */
     justify-content: center;
-    padding: 0 16px; /* Отступы по бокам контейнера */
+    padding: 0 16px; /* РћС‚СЃС‚СѓРїС‹ РїРѕ Р±РѕРєР°Рј РєРѕРЅС‚РµР№РЅРµСЂР° */
 }
 
-/* Каждая карточка */
+/* РљР°Р¶РґР°СЏ РєР°СЂС‚РѕС‡РєР° */
 .card {
-    width: calc(33.33% - 16px); /* Ширина карточки с учетом отступа */
+    width: calc(33.33% - 16px); /* РЁРёСЂРёРЅР° РєР°СЂС‚РѕС‡РєРё СЃ СѓС‡РµС‚РѕРј РѕС‚СЃС‚СѓРїР° */
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
@@ -365,14 +365,14 @@ input.form-input__field, select.form-input__field, .form-input__placeholder {
 
 }
 
-    /* Стили для изображения в карточке */
+    /* РЎС‚РёР»Рё РґР»СЏ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РІ РєР°СЂС‚РѕС‡РєРµ */
     .card img {
-        width: 100%; /* Задаем ширину изображения на 100% от родительского контейнера */
+        width: 100%; /* Р—Р°РґР°РµРј С€РёСЂРёРЅСѓ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РЅР° 100% РѕС‚ СЂРѕРґРёС‚РµР»СЊСЃРєРѕРіРѕ РєРѕРЅС‚РµР№РЅРµСЂР° */
         height: 300px;
         border-radius: 5px;
     }
 
-    /* Стили для названия в карточке */
+    /* РЎС‚РёР»Рё РґР»СЏ РЅР°Р·РІР°РЅРёСЏ РІ РєР°СЂС‚РѕС‡РєРµ */
     .card h3 {
         font-size: 22px;
         margin-top: 10px;
@@ -389,7 +389,7 @@ input.form-input__field, select.form-input__field, .form-input__placeholder {
     margin-bottom:20px;
 }
 
-/* Стиль для кнопок */
+/* РЎС‚РёР»СЊ РґР»СЏ РєРЅРѕРїРѕРє */
 .btn {
     padding: 8px 16px;
     border-radius: 5px;
@@ -419,34 +419,217 @@ input.form-input__field, select.form-input__field, .form-input__placeholder {
 
 
 .modal-content {
-    background-color: #f5a7a7; /* Ваш желаемый цвет фона */
+    background-color: #353232f5; /* Р’Р°С€ Р¶РµР»Р°РµРјС‹Р№ С†РІРµС‚ С„РѕРЅР° */
 }
 
-/* Изменяем цвет заголовка модального окна */
+/* РР·РјРµРЅСЏРµРј С†РІРµС‚ Р·Р°РіРѕР»РѕРІРєР° РјРѕРґР°Р»СЊРЅРѕРіРѕ РѕРєРЅР° */
 .modal-header {
-    background-color: #f78fb3; /* Ваш желаемый цвет фона для заголовка */
+    background-color: #ab8290; /* Р’Р°С€ Р¶РµР»Р°РµРјС‹Р№ С†РІРµС‚ С„РѕРЅР° РґР»СЏ Р·Р°РіРѕР»РѕРІРєР° */
 }
 
-/* Изменяем цвет текста в модальном окне */
+/* РР·РјРµРЅСЏРµРј С†РІРµС‚ С‚РµРєСЃС‚Р° РІ РјРѕРґР°Р»СЊРЅРѕРј РѕРєРЅРµ */
 .modal-body {
-    color: #333333; /* Ваш желаемый цвет текста */
+    color: #333333; /* Р’Р°С€ Р¶РµР»Р°РµРјС‹Р№ С†РІРµС‚ С‚РµРєСЃС‚Р° */
 }
 
 .modal-header .close {
-    color: #d9534f; /* Красный цвет */
+    color: #d9534f; /* РљСЂР°СЃРЅС‹Р№ С†РІРµС‚ */
     font-size: 1.5rem;
 }
 
-/* Изменяем цвет кнопок действия (например, Сохранить или Отменить) */
+/* РР·РјРµРЅСЏРµРј С†РІРµС‚ РєРЅРѕРїРѕРє РґРµР№СЃС‚РІРёСЏ (РЅР°РїСЂРёРјРµСЂ, РЎРѕС…СЂР°РЅРёС‚СЊ РёР»Рё РћС‚РјРµРЅРёС‚СЊ) */
 .modal-footer .btn {
-    background-color: #5bc0de; /* Ваш желаемый цвет фона */
+    background-color: #5bc0de; /* Р’Р°С€ Р¶РµР»Р°РµРјС‹Р№ С†РІРµС‚ С„РѕРЅР° */
     color: white;
 }
 
 .modal-footer .btn-primary {
-    background-color: #28a745; /* Зеленый для кнопки "Сохранить" */
+    background-color: #28a745; /* Р—РµР»РµРЅС‹Р№ РґР»СЏ РєРЅРѕРїРєРё "РЎРѕС…СЂР°РЅРёС‚СЊ" */
 }
 
 .modal-footer .btn-secondary {
-    background-color: #6c757d; /* Серый для кнопки "Отменить" */
+    background-color: #6c757d; /* РЎРµСЂС‹Р№ РґР»СЏ РєРЅРѕРїРєРё "РћС‚РјРµРЅРёС‚СЊ" */
 }
+
+.modal-dialog {
+    max-width: 63%; /* РЈРІРµР»РёС‡РёРІР°РµС‚ С€РёСЂРёРЅСѓ РјРѕРґР°Р»СЊРЅРѕРіРѕ РѕРєРЅР° РґРѕ 80% РѕС‚ С€РёСЂРёРЅС‹ СЌРєСЂР°РЅР° */
+    width: 63%;
+}
+
+.modal-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: stretch;
+    justify-content: space-evenly;
+    align-content: space-between;
+    flex-direction: row;
+}
+
+.modal-image-frame {
+    flex: 1; /* РљР°СЂС‚РёРЅРєР° Р·Р°РЅРёРјР°РµС‚ РѕРґРЅСѓ С‡Р°СЃС‚СЊ */
+    text-align: center; /* Р¦РµРЅС‚СЂРёСЂСѓРµРј РёР·РѕР±СЂР°Р¶РµРЅРёРµ */
+}
+
+    .modal-image-frame img {
+        max-width: 100%; /* РР·РѕР±СЂР°Р¶РµРЅРёРµ Р°РґР°РїС‚РёСЂСѓРµС‚СЃСЏ РїРѕРґ РєРѕРЅС‚РµР№РЅРµСЂ */
+        height: auto;
+    }
+
+.text-content {
+    margin-top: 20px;
+    flex: 1; /* РўРµРєСЃС‚ Р·Р°РЅРёРјР°РµС‚ РѕРґРЅСѓ С‡Р°СЃС‚СЊ */
+}
+
+/* РђРґР°РїС‚РёРІРЅРѕСЃС‚СЊ: РїРµСЂРµРЅРѕСЃ С‚РµРєСЃС‚Р° РїРѕРґ РёР·РѕР±СЂР°Р¶РµРЅРёРµ РЅР° СѓР·РєРёС… СЌРєСЂР°РЅР°С… */
+@media (max-width: 768px) {
+    .modal-content-wrapper {
+        flex-direction: column; /* РџРµСЂРµРєР»СЋС‡Р°РµРјСЃСЏ РЅР° РІРµСЂС‚РёРєР°Р»СЊРЅСѓСЋ РєРѕРјРїРѕРЅРѕРІРєСѓ */
+        text-align: center; /* Р¦РµРЅС‚СЂРёСЂСѓРµРј С‚РµРєСЃС‚ */
+    }
+}
+
+.modal-text {
+    text-align: left;
+    color: white;
+    font-family: "Scada", serif;
+    font-weight: 700;
+    font-size: xx-large;
+}
+.talent, .passive-talent {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f900;
+}
+
+    .talent p, .passive-talent p {
+        margin: 5px 0;
+        text-align: left;
+        color: white;
+        font-family: "Scada", serif;
+        font-weight: 700;
+    }
+
+    .talent strong, .passive-talent strong {
+        color: #6784d7;
+        font-size: larger;
+        text-align: left;
+        font-family: "Scada", serif;
+        font-weight: 700;
+    }
+
+/* РњР°С‚РµСЂРёР°Р»С‹ РґР»СЏ РїСЂРѕРєР°С‡РєРё */
+.ascension-level {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f900;
+}
+
+    .ascension-level p {
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #6784d7;
+        font-size: larger;
+        text-align: left;
+        font-family: "Scada", serif;
+        font-weight: 700;
+    }
+
+    .ascension-level ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .ascension-level li {
+        margin: 5px 0;
+        text-align: left;
+        color: white;
+        font-family: "Scada", serif;
+        font-weight: 700;
+    }
+
+        .ascension-level li:before {
+            content: "вњ”пёЏ";
+            margin-right: 5px;
+            color: #28a745;
+        }
+
+.heart-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+.heart-button {
+    background: none;
+    border: none;
+    font-size: 37px;
+    cursor: pointer;
+    color: red;
+    outline: none;
+    transition: transform 0.2s;
+}
+
+    .heart-button:hover {
+        transform: scale(1.2);
+    }
+
+    .heart-button:focus {
+        outline: none;
+    }
+
+
+.auth-container {
+    max-width: 568px;
+    margin: 109px auto;
+    text-align: center;
+    padding: 28px;
+    background: #f9f9f92e;
+    border-radius: 41px;
+    box-shadow: 16px -16px 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-form-label {
+    margin-top: 33px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.auth-form-input {
+    padding: 10px;
+    border: 1px solid #f3a7a7;
+    border-radius: 12px;
+    font-size: 18px;
+    outline: none;
+}
+
+    .auth-form-input:focus {
+        border-color: #0073e6;
+    }
+
+.auth-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background: #ff8686c4;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 47px;
+}
+
+    .auth-button:hover {
+        background: #db4f4fc4;
+    }
