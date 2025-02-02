@@ -160,32 +160,6 @@ document.getElementById('close-modal-header').addEventListener('click', function
 document.getElementById('close-modal-footer').addEventListener('click', function () {
     $('#character-modal').modal('hide');
 });
-//async function openCharacterModal(characterName, img) {
-//    try {
-//        const response = await fetch(apiUrl + `/characters/${characterName}?lang=en`);
-//        const data = await response.json();
-
-//        // Заполняем модальное окно данными
-//        const modalTitle = document.getElementById('modal-title');
-//        const modalBody = document.getElementById('modal-body');
-//        modalTitle.textContent = data.name; // Пример: имя персонажа
-//        modalBody.innerHTML = `
-//            <p class="just-text">${data.title}</p>
-//            <div class="image-frame">
-//                <img src="${img}" width="400" alt="${data.name}" />
-//            </div>
-//            <p><strong>Element:</strong> ${data.vision}</p>
-//            <p><strong>Rarity:</strong> ${data.rarity}</p>
-//            <p><strong>Weapon:</strong> ${data.weapon}</p>
-//            <p><strong>Nation:</strong> ${data.nation}</p>
-//            <p><strong>Nation:</strong> ${data.nation}</p>
-//        `;
-//        // Показываем модальное окно
-//        $('#character-modal').modal('show');
-//    } catch (error) {
-//        console.error('Ошибка при загрузке данных персонажа:', error);
-//    }
-//}
 
 async function openCharacterModal(characterName, img) {
     try {
@@ -362,7 +336,11 @@ async function createCharacterCard(character) {
     }
 }
 
+async function load() {
+    loadCards();
+    auth();
 
+}
 document.getElementById('apply-filter').addEventListener('click', async function () {
     console.log('Filter apply button clicked');
 
@@ -423,4 +401,43 @@ document.getElementById('apply-filter').addEventListener('click', async function
     }
 });
 
-document.addEventListener('DOMContentLoaded', loadCards);
+async function auth() {
+    const authForm = document.getElementById('authForm');
+    const confirmPasswordField = document.getElementById('confirmPassword');
+    const confirmPasswordLabel = document.getElementById('confirmPasswordLabel');
+    const authButton = document.getElementById('authButton');
+    const switchText = document.getElementById('switchText');
+
+    function toggleAuthForm() {
+        if (authButton.textContent === 'Войти') {
+            authButton.textContent = 'Зарегистрироваться';
+            confirmPasswordField.style.display = 'block';
+            confirmPasswordLabel.style.display = 'block';
+            switchText.innerHTML = 'Уже есть аккаунт? <button type="button" id="switchLink" class="name-tittle no-border-button">Войти</button>!';
+        } else {
+            authButton.textContent = 'Войти';
+            confirmPasswordField.style.display = 'none';
+            confirmPasswordLabel.style.display = 'none';
+            switchText.innerHTML = 'Нет аккаунта? <button type="button" id="switchLink" class="name-tittle no-border-button">Зарегистрируйтесь</button>!';
+        }
+
+        // Заново получаем новый switchLink и вешаем обработчик
+        setTimeout(() => {
+            const newSwitchLink = document.getElementById('switchLink');
+            if (newSwitchLink) {
+                newSwitchLink.addEventListener('click', toggleAuthForm);
+            }
+        }, 0);
+    }
+
+    // Ждем загрузки DOM перед привязкой обработчика
+    document.addEventListener('DOMContentLoaded', function () {
+        const switchLink = document.getElementById('switchLink');
+        if (switchLink) {
+            switchLink.addEventListener('click', toggleAuthForm);
+        }
+    });
+}
+document.addEventListener('DOMContentLoaded', load);
+
+

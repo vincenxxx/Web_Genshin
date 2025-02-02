@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Reg";
+}
+<div class="auth-container">
+    <h1 class="main-tittle">Добро пожаловать в <span class="name-tittle">CharacterGenshinBoost</span>!</h1>
+    <h2 class="just-text">Зарегистрируйтесь, чтобы получить доступ ко всем возможностям.</h2>
+
+    <form class="auth-form" id="authForm">
+        <!-- Поле для имени пользователя -->
+        <label for="username" class="auth-form-label just-text">Имя пользователя</label>
+        <input type="text" id="username" name="username" class="auth-form-input" placeholder="Введите ваше имя пользователя" required />
+
+        <!-- Поле для пароля -->
+        <label for="password" class="auth-form-label just-text">Пароль</label>
+        <input type="password" id="password" name="password" class="auth-form-input" placeholder="Введите ваш пароль" required />
+
+        <!-- Поле для подтверждения пароля (только для регистрации) -->
+        <label for="confirmPassword" class="auth-form-label just-text" id="confirmPasswordLabel" style="display: none;">Подтвердите пароль</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" class="auth-form-input" placeholder="Подтвердите пароль" style="display: none;" />
+
+        <!-- Кнопка действия (Войти или Зарегистрироваться) -->
+        <button type="submit" class="auth-button" id="authButton">Заргистрироваться</button>
+
+        <!-- Ссылка на переключение формы -->
+        <p class="just-text" id="switchTextReg">
+            Есть аккаунт? <a class="name-tittle no-border-button" asp-area="" asp-controller="Home" asp-action="Auth">Войти</a>!
+        </p>
+    </form>
+    </div>
+</div>

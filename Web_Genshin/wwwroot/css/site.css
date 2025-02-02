@@ -633,3 +633,16 @@ input.form-input__field, select.form-input__field, .form-input__placeholder {
     .auth-button:hover {
         background: #db4f4fc4;
     }
+
+.no-border-button {
+    background: none;
+    border: none;
+    color: #ff8686c4;
+    font: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+    .no-border-button:hover {
+        color: #db4f4fc4;
+    }

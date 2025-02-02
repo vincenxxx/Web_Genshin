@@ -5,7 +5,7 @@
     <h1 class="main-tittle">Добро пожаловать в <span class="name-tittle">CharacterGenshinBoost</span>!</h1>
     <h2 class="just-text">Авторизуйтесь, чтобы получить доступ ко всем возможностям.</h2>
 
-    <form class="auth-form">
+    <form class="auth-form" id="authForm">
         <!-- Поле для имени пользователя -->
         <label for="username" class="auth-form-label just-text">Имя пользователя</label>
         <input type="text" id="username" name="username" class="auth-form-input" placeholder="Введите ваше имя пользователя" required />
@@ -14,13 +14,53 @@
         <label for="password" class="auth-form-label just-text">Пароль</label>
         <input type="password" id="password" name="password" class="auth-form-input" placeholder="Введите ваш пароль" required />
 
-        <!-- Кнопка авторизации -->
-        <button type="submit" class="auth-button">Войти</button>
+        <!-- Поле для подтверждения пароля (только для регистрации) -->
+        <label for="confirmPassword" class="auth-form-label just-text" id="confirmPasswordLabel" style="display: none;">Подтвердите пароль</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" class="auth-form-input" placeholder="Подтвердите пароль" style="display: none;" />
 
-        <!-- Ссылка на регистрацию -->
-        <p class="just-text">
-            Нет аккаунта? <a href="#" class="name-tittle">Зарегистрируйтесь</a>!
+        <!-- Кнопка действия (Войти или Зарегистрироваться) -->
+        <button type="submit" class="auth-button" id="authButton">Войти</button>
+
+        <!-- Ссылка на переключение формы -->
+        <p class="just-text" id="switchText">
+            Нет аккаунта? <a class="name-tittle no-border-button" asp-area="" asp-controller="Home" asp-action="Reg">Зарегистрироваться</a>!
         </p>
     </form>
 </div>
+<script>
+    document.getElementById('authForm').addEventListener('submit', async function (event) {
+        event.preventDefault(); // Отменяем стандартную отправку формы
+
+        // Получаем данные из формы
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        try {
+            // Отправляем POST-запрос на сервер
+            const response = await fetch('http://localhost:5107/sign_token', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password }) // Отправляем данные в JSON-формате
+            });
+
+            if (!response.ok) {
+                throw new Error('Ошибка авторизации');
+            }
+
+            // Получаем JSON-ответ
+            const data = await response.json();
+
+            // Сохраняем токен в localStorage
+            localStorage.setItem('token', data.token);
+
+            // Перенаправляем пользователя на главную страницу (или другую)
+            window.location.href = '/Home/Index';
+        } catch (error) {
+            console.error('Ошибка:', error);
+            alert('Ошибка авторизации. Проверьте данные и попробуйте снова.');
+        }
+    });
+</script>
 
