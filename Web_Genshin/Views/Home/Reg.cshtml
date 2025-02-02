@@ -26,5 +26,48 @@
             Есть аккаунт? <a class="name-tittle no-border-button" asp-area="" asp-controller="Home" asp-action="Auth">Войти</a>!
         </p>
     </form>
-    </div>
 </div>
+<script>
+    document.getElementById('authForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        try {
+            const response = await fetch("https://localhost:7287/reg_token", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    username: username,
+                    password: password
+                })
+            });
+
+            // Получаем данные в формате JSON
+            const responseData = await response.json();
+
+            // Если ответ не успешен, выбрасываем ошибку
+            if (!response.ok) {
+                throw new Error(responseData.error || "Ошибка авторизации");
+            }
+
+            // Успешно получили токен
+            const token = responseData.access_token;
+            const name = responseData.name;
+
+            console.log("Токен:", token);
+            console.log("Имя:", name);
+
+            // Сохранение токена в localStorage (если нужно)
+            localStorage.setItem("access_token", token);
+
+            // Здесь можно сделать редирект или выполнить другие действия после успешной авторизации
+            window.location.href = "/Home/Client";  // Например, на защищенную страницу
+        } catch (error) {
+            alert("Ошибка: " + error.message);
+        }
+    });
+</script>

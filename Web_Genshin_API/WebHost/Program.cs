@@ -45,6 +45,16 @@ namespace ban.Bank.WebHost
 
                 c.AddSecurityRequirement(securityRequirement);
             });
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    policy =>
+                    {
+                        policy.AllowAnyOrigin() 
+                              .AllowAnyMethod()  
+                              .AllowAnyHeader(); 
+                    });
+            });
             builder.Services.AddDbContext<GenshinContext>(options =>
                 options.UseNpgsql("Host=localhost;Port=5432;Database=genshin;Username=postgres;Password=2289"));
             builder.Services
@@ -81,6 +91,7 @@ namespace ban.Bank.WebHost
             }
 
             app.UseHttpsRedirection();
+            app.UseCors("AllowAll");
             app.UseAuthentication();
 
             app.UseAuthorization();

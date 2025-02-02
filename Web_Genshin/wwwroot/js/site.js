@@ -63,26 +63,38 @@ async function loadNextPage(data, cardsContainer) {
         const heartContainer = document.createElement('div');
         heartContainer.classList.add('heart-container');
         const heartButton = document.createElement('button');
-        heartButton.classList.add('heart-button');
-        heartButton.innerHTML = '♡'; // Пустое сердечко
-        heartButton.title = 'Добавить в избранное';
 
-        // Проверяем, находится ли карточка в избранном
-        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-        if (favorites.includes(item.toString())) {
-            heartButton.innerHTML = '❤️'; // Заполненное сердечко
-            heartButton.title = 'Удалить из избранного';
+        const token = localStorage.getItem('access_token');
+        if (token) {
+            const favoriteCharactersResponse = await fetch('https://localhost:7287/getCharacter', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('access_token')}`, // Используем правильный синтаксис
+                },
+            });
+            const favorites = await favoriteCharactersResponse.json();
+
+            heartButton.classList.add('heart-button');
+            heartButton.innerHTML = '♡'; // Пустое сердечко
+            heartButton.title = 'Добавить в избранное';
+
+            if (favorites.includes(item.toString())) {
+                heartButton.innerHTML = '❤️'; // Заполненное сердечко
+                heartButton.title = 'Удалить из избранного';
+            }
+
+            // Обработчик клика по кнопке сердечка
+            heartButton.addEventListener('click', (event) => {
+                event.stopPropagation(); // Предотвращаем открытие модального окна при клике на сердечко
+                toggleFavorite(item.toString(), heartButton);
+            });
+
+            // Добавляем кнопку сердечка в контейнер
+            heartContainer.appendChild(heartButton);
+            card.appendChild(heartContainer);
         }
-
-        // Обработчик клика по кнопке сердечка
-        heartButton.addEventListener('click', (event) => {
-            event.stopPropagation(); // Предотвращаем открытие модального окна при клике на сердечко
-            toggleFavorite(item.toString(), heartButton);
-        });
-
-        // Добавляем кнопку сердечка в контейнер
-        heartContainer.appendChild(heartButton);
-        card.appendChild(heartContainer);
+        
+        
         // Добавляем событие клика
         card.addEventListener('click', () => {
             openCharacterModal(item.toString(), imgUrl);
@@ -102,19 +114,35 @@ async function loadNextPage(data, cardsContainer) {
     currentPage++;
     isLoading = false;
 }
-function toggleFavorite(character, heartButton) {
-    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-
+async function toggleFavorite(character, heartButton) {
+    const favoriteCharactersResponse = await fetch('https://localhost:7287/getCharacter', {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${localStorage.getItem('access_token')}`, // Используем правильный синтаксис
+        },
+    });
+    const favorites = await favoriteCharactersResponse.json();
     if (favorites.includes(character)) {
-        // Если персонаж уже в избранном, удаляем его
-        const index = favorites.indexOf(character);
-        favorites.splice(index, 1);
+        const response = await fetch('https://localhost:7287/dislike', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('access_token')}`, // Правильный синтаксис для Bearer
+                'Content-Type': 'application/json' // Указываем правильный тип контента
+            },
+            body: JSON.stringify({ name: character })  // Передаем имя персонажа
+        });
         heartButton.innerHTML = '♡'; // Пустое сердечко
         heartButton.title = 'Добавить в избранное';
         console.log(`${character} удален из избранного`);
     } else {
-        // Если персонажа нет в избранном, добавляем его
-        favorites.push(character);
+        const response = await fetch('https://localhost:7287/like', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('access_token')}`, // Правильный синтаксис для Bearer
+                'Content-Type': 'application/json' // Указываем правильный тип контента
+            },
+            body: JSON.stringify({ name: character })  // Передаем имя персонажа
+        });
         heartButton.innerHTML = '❤️'; // Заполненное сердечко
         heartButton.title = 'Удалить из избранного';
         console.log(`${character} добавлен в избранное`);
@@ -336,11 +364,6 @@ async function createCharacterCard(character) {
     }
 }
 
-async function load() {
-    loadCards();
-    auth();
-
-}
 document.getElementById('apply-filter').addEventListener('click', async function () {
     console.log('Filter apply button clicked');
 
@@ -401,43 +424,7 @@ document.getElementById('apply-filter').addEventListener('click', async function
     }
 });
 
-async function auth() {
-    const authForm = document.getElementById('authForm');
-    const confirmPasswordField = document.getElementById('confirmPassword');
-    const confirmPasswordLabel = document.getElementById('confirmPasswordLabel');
-    const authButton = document.getElementById('authButton');
-    const switchText = document.getElementById('switchText');
 
-    function toggleAuthForm() {
-        if (authButton.textContent === 'Войти') {
-            authButton.textContent = 'Зарегистрироваться';
-            confirmPasswordField.style.display = 'block';
-            confirmPasswordLabel.style.display = 'block';
-            switchText.innerHTML = 'Уже есть аккаунт? <button type="button" id="switchLink" class="name-tittle no-border-button">Войти</button>!';
-        } else {
-            authButton.textContent = 'Войти';
-            confirmPasswordField.style.display = 'none';
-            confirmPasswordLabel.style.display = 'none';
-            switchText.innerHTML = 'Нет аккаунта? <button type="button" id="switchLink" class="name-tittle no-border-button">Зарегистрируйтесь</button>!';
-        }
-
-        // Заново получаем новый switchLink и вешаем обработчик
-        setTimeout(() => {
-            const newSwitchLink = document.getElementById('switchLink');
-            if (newSwitchLink) {
-                newSwitchLink.addEventListener('click', toggleAuthForm);
-            }
-        }, 0);
-    }
-
-    // Ждем загрузки DOM перед привязкой обработчика
-    document.addEventListener('DOMContentLoaded', function () {
-        const switchLink = document.getElementById('switchLink');
-        if (switchLink) {
-            switchLink.addEventListener('click', toggleAuthForm);
-        }
-    });
-}
-document.addEventListener('DOMContentLoaded', load);
+document.addEventListener('DOMContentLoaded', loadCards);
 
 

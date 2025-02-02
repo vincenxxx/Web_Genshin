@@ -34,5 +34,26 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>
+<script>
+       document.addEventListener('DOMContentLoaded', function() {
+        const token = localStorage.getItem('access_token');
+        const clientLink = document.querySelector('a[href="/Home/Auth"]');
+
+        if (token) {
+            console.log('Токен найден, показываем информацию для авторизованного пользователя');
+            if (clientLink) {
+                clientLink.setAttribute('asp-action', 'Client');
+                clientLink.setAttribute('href', '/Home/Client');
+            }
+        } else {
+            console.log('Токен не найден, показываем информацию для гостя');
+            if (clientLink) {
+                clientLink.setAttribute('asp-action', 'Auth');
+                clientLink.setAttribute('href', '/Home/Auth');
+            }
+        }
+    });
+</script>
