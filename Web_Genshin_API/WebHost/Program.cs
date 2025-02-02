@@ -1,4 +1,9 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Web_Genshin_API.DataAccess;
+using Web_Genshin_API.WebHost;
 
 namespace ban.Bank.WebHost
 {
@@ -40,12 +45,8 @@ namespace ban.Bank.WebHost
 
                 c.AddSecurityRequirement(securityRequirement);
             });
-            builder.Services.AddTransient<IAmmount<Bill>, BillService>();
-            builder.Services.AddTransient<IAmmount<Credit>, CreditService>();
-            builder.Services.AddTransient<IAmmount<Invest>, InvestService>();
-            builder.Services.AddTransient<AmmountService>();
-            builder.Services.AddDbContext<PostgresContext>(options =>
-                options.UseNpgsql("Host=localhost;Port=5432;Database=bank;Username=postgres;Password=22890"));
+            builder.Services.AddDbContext<GenshinContext>(options =>
+                options.UseNpgsql("Host=localhost;Port=5432;Database=genshin;Username=postgres;Password=2289"));
             builder.Services
                 .AddAuthentication(x =>
                 {
@@ -61,8 +62,10 @@ namespace ban.Bank.WebHost
                     {
                         IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
                         ValidateIssuer = false,
-                        ValidateAudience = false
+                        ValidateAudience = false,
+                        ValidateLifetime = true
                     };
+
                 });
             builder.Services.AddAuthorization();
             builder.Services.AddControllers();
@@ -85,6 +88,7 @@ namespace ban.Bank.WebHost
             app.MapControllers();
 
             app.Run();
+            
         }
     }
 }
